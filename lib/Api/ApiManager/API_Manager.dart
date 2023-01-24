@@ -26,8 +26,22 @@ class ApiManager {
       ThrowURL2 ,
       {
         "apiKey" : ApiKey ,
-        'q' : dataSource ,
+        'sources' : dataSource ,
       }
+    );
+    var response =  await http.get(url);
+    return SourcesData.fromJson(jsonDecode(response.body));
+  }
+
+  static Future<SourcesData> Searchin({String? dataSource , String? query}) async{
+    Uri url = Uri.https(
+        BaseURL ,
+        ThrowURL2 ,
+        {
+          "apiKey" : ApiKey ,
+          'sources' : dataSource ,
+          'q' : query ,
+        }
     );
     var response =  await http.get(url);
     return SourcesData.fromJson(jsonDecode(response.body));

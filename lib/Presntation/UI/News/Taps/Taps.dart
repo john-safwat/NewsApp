@@ -45,7 +45,7 @@ class _SourcesTapsState extends State<SourcesTaps> {
           // data
           Expanded(
               child: FutureBuilder<SourcesData> (
-                future: ApiManager.GetFullData(widget.sources[selectedIndex].name!),
+                future: ApiManager.GetFullData(widget.sources[selectedIndex].id! ),
                 builder: (context, snapshot) {
                   if(snapshot.connectionState == ConnectionState.waiting){
                     return const Center(

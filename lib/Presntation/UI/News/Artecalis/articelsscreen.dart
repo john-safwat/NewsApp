@@ -8,7 +8,6 @@ class ArticlesScreen extends StatelessWidget {
   ArticlesScreen ({required this.articles});
   @override
   Widget build(BuildContext context) {
-    debugPrint(articles.length.toString());
     return ListView.builder(
       itemBuilder: (context, index) => ArticleShow(articles[index]),
       itemCount: articles.length,

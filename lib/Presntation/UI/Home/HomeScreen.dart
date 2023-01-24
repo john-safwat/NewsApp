@@ -17,8 +17,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int TabIndex = 6 ;
   String CatregoriID = '';
 
-  TextEditingController searchControllor = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     var MediaQ = MediaQuery.of(context).size;
@@ -38,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
             TabIndex == 6 || TabIndex == 7? Container():
             IconButton(
                 onPressed: (){
-                  Navigator.pushNamed(context, SearchScreen.routeName);
+                  Navigator.pushNamed(context, SearchScreen.routeName , arguments: CatregoriID);
                 },
                 icon:const Icon(Icons.search_rounded)
             ),
