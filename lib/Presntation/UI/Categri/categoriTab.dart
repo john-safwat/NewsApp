@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/Presntation/Theme/mytheme.dart';
 import 'package:newsapp/Presntation/UI/Categri/ButtonWidget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoriScreen extends StatelessWidget {
   Function ChangeIndex ;
@@ -15,6 +16,13 @@ class CategoriScreen extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    items[0].Title = AppLocalizations.of(context)!.sports;
+    items[1].Title = AppLocalizations.of(context)!.politics;
+    items[2].Title = AppLocalizations.of(context)!.health;
+    items[3].Title = AppLocalizations.of(context)!.bussines;
+    items[4].Title = AppLocalizations.of(context)!.environment;
+    items[5].Title = AppLocalizations.of(context)!.science;
+
     return Container(
       padding:const EdgeInsets.all(20),
       child: Column(

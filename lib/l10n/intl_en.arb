@@ -1,0 +1,12 @@
+{
+   "app_title" :"NewsApp",
+   "categori" :"Categori",
+   "settings" :"Settings",
+   "sports" :"Sports",
+   "politics" :"Politics",
+   "health" :"Health",
+   "bussines" :"Bussines",
+   "environment" :"Environment",
+   "science" :"Science",
+   "language" :"Language"
+}

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/Presntation/UI/Categri/categoriTab.dart';
+import 'package:provider/provider.dart';
+
+import '../../../Provider/SettingsProvider.dart';
 
 class PickCategoriButton extends StatelessWidget {
   Categori categori ;
@@ -8,19 +11,21 @@ class PickCategoriButton extends StatelessWidget {
   PickCategoriButton ({required this.categori , required this.index , required this.ChangeIndex});
   @override
   Widget build(BuildContext context) {
+    var LanguageProvider = Provider.of<SettingsProvider>(context);
     return InkWell(
       onTap: (){
         ChangeIndex(index , categori.Title , categori.CategoriID) ;
       },
       child: Container(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: categori.BGcolor,
           borderRadius: BorderRadius.only(
             topLeft:const  Radius.circular(20),
             topRight:const Radius.circular(20),
-            bottomRight: index % 2 == 0 ?const Radius.circular(0):const Radius.circular(20),
-            bottomLeft: index % 2 == 0 ? const Radius.circular(20):const Radius.circular(0),
+            bottomRight: LanguageProvider.Language == 'en'? index % 2 == 0 ?const Radius.circular(0):const Radius.circular(20):index % 2 == 0 ?const Radius.circular(20):const Radius.circular(0),
+            bottomLeft: LanguageProvider.Language == 'en'? index % 2 == 0 ?const Radius.circular(20):const Radius.circular(0):index % 2 == 0 ?const Radius.circular(0):const Radius.circular(20),
+
           )
         ),
         child: Column(

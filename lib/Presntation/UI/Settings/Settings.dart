@@ -1,5 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:newsapp/Presntation/Theme/mytheme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:newsapp/Provider/SettingsProvider.dart';
+import 'package:provider/provider.dart';
 
 class SettingsTap extends StatefulWidget {
   @override
@@ -7,19 +12,24 @@ class SettingsTap extends StatefulWidget {
 }
 
 class _SettingsTapState extends State<SettingsTap> {
-  var Languages = ['English' , 'Arabic' , 'Spain'];
-
+  var Languages = ['English' , 'Arabic'];
   var selectedLanguage = 'English';
 
   @override
   Widget build(BuildContext context) {
+    var LanguageProvider = Provider.of<SettingsProvider>(context);
+    if (LanguageProvider.Language == 'en'){
+      selectedLanguage = 'English';
+    }else {
+      selectedLanguage = 'Arabic';
+    }
     return Container(
       padding:const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Text("Language",
-            style: TextStyle(
+          Text(AppLocalizations.of(context)!.language,
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: MyTheme.Gray,
@@ -44,11 +54,14 @@ class _SettingsTapState extends State<SettingsTap> {
                       value: Value,
                       child: Text(Value),
                   )).toList(),
-                  onChanged: (value) {
+                  onChanged: (value)  {
                     selectedLanguage = value!;
-                    setState(() {
-
-                    });
+                    if(selectedLanguage == 'English'){
+                      LanguageProvider.ChangeLanguage("en");
+                    }else{
+                      LanguageProvider.ChangeLanguage('ar');
+                    }
+                    setState(() {});
                   },
                 ),
             ),

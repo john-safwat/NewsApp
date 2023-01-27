@@ -4,6 +4,7 @@ import 'package:newsapp/Presntation/UI/Categri/categoriTab.dart';
 import 'package:newsapp/Presntation/UI/News/DetalisTap.dart';
 import 'package:newsapp/Presntation/UI/Search/SearchScreen.dart';
 import 'package:newsapp/Presntation/UI/Settings/Settings.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const  String routeName = "homescrem";
@@ -13,13 +14,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String Title =  "NewsApp";
+  String Title =  "";
   int TabIndex = 6 ;
   String CatregoriID = '';
-
   @override
   Widget build(BuildContext context) {
     var MediaQ = MediaQuery.of(context).size;
+    if (TabIndex == 6){
+      Title = AppLocalizations.of(context)!.app_title;
+    }
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -68,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: (){
                   setState(() {
                     TabIndex = 6;
-                    Title = 'NewsApp';
+                    Title = AppLocalizations.of(context)!.app_title;
                   });
                   Navigator.pop(context);
                 },
@@ -76,10 +79,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
 
                   child: Row(
-                    children: const [
-                      Icon(Icons.list , color: MyTheme.Black ,size: 30,),
-                      SizedBox(width:5,),
-                      Text('Categories' , style: TextStyle(
+                    children: [
+                      const Icon(Icons.list , color: MyTheme.Black ,size: 30,),
+                      const SizedBox(width:5,),
+                      Text(AppLocalizations.of(context)!.categori, style:const TextStyle(
                         fontSize: 24,
                         color: MyTheme.Black,
                         fontWeight: FontWeight.bold
@@ -95,17 +98,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: (){
                   setState(() {
                     TabIndex = 7;
-                    Title = 'Settings';
+                    Title = AppLocalizations.of(context)!.settings;
                   });
                   Navigator.pop(context);
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
                   child: Row(
-                    children: const [
-                      Icon(Icons.settings_rounded , color: MyTheme.Black ,size: 30,),
-                      SizedBox(width:5,),
-                      Text('Settings' , style: TextStyle(
+                    children:  [
+                      const Icon(Icons.settings_rounded , color: MyTheme.Black ,size: 30,),
+                      const SizedBox(width:5,),
+                      Text(AppLocalizations.of(context)!.settings , style: const TextStyle(
                           fontSize: 24,
                           color: MyTheme.Black,
                           fontWeight: FontWeight.bold
