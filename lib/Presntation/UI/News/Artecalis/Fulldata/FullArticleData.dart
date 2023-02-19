@@ -28,7 +28,7 @@ class FullArtecaleScreen extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.network(article.urlToImage!), 
+                child: Image.network(article.urlToImage!),
               ),
               const SizedBox(height: 20,),
               // the source tiele
@@ -86,10 +86,10 @@ class FullArtecaleScreen extends StatelessWidget {
                   highlightColor: Colors.transparent,
                   onTap: ()async{
                     Uri url = Uri.parse(article.url!);
-                    if(await canLaunchUrl(url)){
+                    try{
                       await launchUrl(url);
-                    }else{
-                      Exception("Url Not Found");
+                    }catch (e) {
+                      throw Exception('Could not launch $url');
                     }
                   },
                   child: Row(
@@ -113,3 +113,4 @@ class FullArtecaleScreen extends StatelessWidget {
     );
   }
 }
+
