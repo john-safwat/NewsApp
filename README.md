@@ -33,7 +33,7 @@ FlutterApplication with REST API
 
 1. Open Terminal and Clone the Repo
 ```
-  git clone https://github.com/dhruvpatidar359/Fluttersnips.git
+  git clone https://github.com/john-safwat/NewsApp.git
 ```
 
 2. Cd Over
