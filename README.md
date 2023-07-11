@@ -38,7 +38,7 @@ FlutterApplication with REST API
 
 2. Cd Over
 ```
-   cd fluttersnips
+   cd NewsApp
 ```
 
 3. Run Pub
