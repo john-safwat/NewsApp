@@ -1,0 +1,27 @@
+icons_launcher:
+  image_path: "assets/logo.png"
+  platforms:
+    android:
+      enable: true
+      image_path: "assets/logo.png"
+      # adaptive_background_color: '#ffffff'
+      adaptive_background_image: "assets/logo.png"
+      adaptive_foreground_image: "assets/logo.png"
+      adaptive_round_image: "assets/logo.png"
+      adaptive_monochrome_image: "assets/logo.png"
+    ios:
+      enable: true
+      image_path: "assets/logo.png"
+    web:
+      enable: true
+      image_path: "assets/logo.png"
+      favicon_path: "assets/logo.png"
+    macos:
+      enable: false
+      image_path: "assets/logo.png"
+    windows:
+      enable: false
+      image_path: "assets/logo.png"
+    linux:
+      enable: false
+      image_path: "assets/logo.png"

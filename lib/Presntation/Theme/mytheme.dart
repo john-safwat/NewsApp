@@ -6,7 +6,7 @@ class MyTheme {
   static const Color Black=  Color(0xFF303030);
   static ThemeData Light =  ThemeData(
     primaryColor: Green,
-    accentColor: Gray,
+    hintColor: Gray,
     appBarTheme: AppBarTheme(
       backgroundColor: Green ,
       elevation: 0 ,
