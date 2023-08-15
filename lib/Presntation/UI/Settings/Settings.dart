@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:newsapp/Core/Provider/SettingsProvider.dart';
 import 'package:newsapp/Presntation/Theme/mytheme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:newsapp/Provider/SettingsProvider.dart';
 import 'package:provider/provider.dart';
 
 class SettingsTap extends StatefulWidget {

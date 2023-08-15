@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/Core/Provider/SettingsProvider.dart';
 import 'package:newsapp/Presntation/UI/Categri/categoriTab.dart';
 import 'package:provider/provider.dart';
 
-import '../../../Provider/SettingsProvider.dart';
 
 class PickCategoriButton extends StatelessWidget {
   Categori categori ;

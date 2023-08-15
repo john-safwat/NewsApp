@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:newsapp/Core/Provider/SettingsProvider.dart';
 import 'package:newsapp/Presntation/Theme/mytheme.dart';
 import 'package:newsapp/Presntation/UI/Home/HomeScreen.dart';
 import 'package:newsapp/Presntation/UI/News/Artecalis/Fulldata/FullArticleData.dart';
@@ -7,7 +8,6 @@ import 'package:newsapp/Presntation/UI/Search/SearchScreen.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:newsapp/Presntation/UI/Splash/SplashScreen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:newsapp/Provider/SettingsProvider.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
